@@ -1,7 +1,13 @@
 local getArgs = require('Module:Arguments')["getArgs"]
 
 local function user(username)
-  return "[[{{ns:2}}:"..username.."|"..username.."]] ([[{{ns:3}}:"..username.."|{{int:talkpagelinktext}}]] / [[{{ns:-1}}:Contributions/"..username.."|{{int:contribslink}}]])"
+  local namespace_user = mw.site.namespaces[2].name
+  local namespace_user_talk = mw.site.namespaces[3].name
+  local namespace_special = mw.site.namespaces[-1].name
+  local talkpagelinktext = mw.message.new("talkpagelinktext")
+  local contribslink = mw.message.new("contribslink")
+
+  return "[["..namespace_user..":"..username.."|"..username.."]] ([["..namespace_user_talk..":"..username.."|"..talkpagelinktext.."]] / [["..namespace_special..":Contributions/"..username.."|"..contribslink.."]])"
 end
 
 local function cite_fact(frame)
