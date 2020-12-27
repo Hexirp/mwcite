@@ -1,3 +1,5 @@
+-- 汎用的な定義
+
 local getArgs = require('Module:Arguments')["getArgs"]
 
 local function user(username)
@@ -8,6 +10,14 @@ local function user(username)
   local contribslink = mw.message.new("contribslink"):plain()
 
   return "[["..namespace_user..":"..username.."|"..username.."]] ([["..namespace_user_talk..":"..username.."|"..talkpagelinktext.."]] / [["..namespace_special..":Contributions/"..username.."|"..contribslink.."]])"
+end
+
+-- 一次資料
+
+local function cite_claim(frame)
+  local username = frame[1]
+
+  return user(username).." による[[主張]]である。"
 end
 
 local function cite_fact(frame)
@@ -22,10 +32,23 @@ local function cite_obvious(frame)
   return user(username)..": [[自明な事柄]]である。"
 end
 
+-- 二次資料
+
+local function cite_investigate(frame)
+  local username = frame[1]
+  local text = frame[2]
+
+  return user(username).." による[[調査]]: "..text
+end
+
+-- main
+
 local function _main(frame)
   local subcommand = {
+    claim = cite_claim,
     fact = cite_fact,
     obvious = cite_obvious,
+    investigate = cite_investigate,
   }
 
   local cite_type = frame["type"]
