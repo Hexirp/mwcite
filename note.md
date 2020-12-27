@@ -33,3 +33,7 @@ Lua に switch 文はないが、 [luaでswitch～caseぽいことをやる – 
 ## ns
 
 ns マジックワードと同じことをやるためには [Lua reference manual](https://www.mediawiki.org/wiki/index.php?oldid=4300742#mw.site.namespaces) にあるように `mw.site.namespaces` を使う。
+
+## int
+
+int マジックワードと同じことをやるためには [Lua reference manual](https://www.mediawiki.org/wiki/index.php?oldid=4300742#mw.message) にあるように `mw.message` を使う。 `{{int:foo}}` は `mw.message.new("foo"):plain()` に置き換えられる。

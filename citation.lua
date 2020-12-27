@@ -4,8 +4,8 @@ local function user(username)
   local namespace_user = mw.site.namespaces[2].name
   local namespace_user_talk = mw.site.namespaces[3].name
   local namespace_special = mw.site.namespaces[-1].name
-  local talkpagelinktext = mw.message.new("talkpagelinktext")
-  local contribslink = mw.message.new("contribslink")
+  local talkpagelinktext = mw.message.new("talkpagelinktext"):plain()
+  local contribslink = mw.message.new("contribslink"):plain()
 
   return "[["..namespace_user..":"..username.."|"..username.."]] ([["..namespace_user_talk..":"..username.."|"..talkpagelinktext.."]] / [["..namespace_special..":Contributions/"..username.."|"..contribslink.."]])"
 end
