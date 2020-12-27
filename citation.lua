@@ -1,7 +1,7 @@
 local getArgs = require('Module:Arguments')["getArgs"]
 
 local function user(username)
-  return "[[{{ns:2}}:"..username.."|"..username"]] ([[{{ns:3}}:"..username.."|{{int:talkpagelinktext}}]] / [[{{ns:-1}}:Contributions/"..username.."|{{int:contribslink}}]])"
+  return "[[{{ns:2}}:"..username.."|"..username.."]] ([[{{ns:3}}:"..username.."|{{int:talkpagelinktext}}]] / [[{{ns:-1}}:Contributions/"..username.."|{{int:contribslink}}]])"
 end
 
 local function cite_fact(frame)
