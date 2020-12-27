@@ -1,3 +1,7 @@
+local function user(username)
+  return $"{{user|${user}}}"
+end
+
 local function cite_fact(frame)
   local username = frame[1]
 
