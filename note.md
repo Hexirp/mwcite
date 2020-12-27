@@ -29,3 +29,7 @@ Lua に switch 文はないが、 [luaでswitch～caseぽいことをやる – 
 ## 文字列への埋め込み
 
 [Luaスクリプトの文法](http://www.rtpro.yamaha.co.jp/RT/docs/lua/tutorial/syntax.html) ([archive](https://web.archive.org/web/20190916124025/http://www.rtpro.yamaha.co.jp/RT/docs/lua/tutorial/syntax.html)) にあるように、 `$` を使って式を文字列の中に埋め込める。
+
+## ns
+
+ns マジックワードと同じことをやるためには [Lua reference manual](https://www.mediawiki.org/wiki/index.php?oldid=4300742#mw.site.namespaces) にあるように `mw.site.namespaces` を使う。
