@@ -1,6 +1,10 @@
 local getArgs = require('Module:Arguments')["getArgs"]
 
 local function user(username)
+  local namespace_user = mw.site.namespaces[2].name
+  local namespace_user_talk = mw.site.namespaces[3].name
+  local namespace_special = mw.site.namespaces[-1].name
+
   return "{{user|"..username.."}}"
 end
 
