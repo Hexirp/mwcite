@@ -1,3 +1,5 @@
+local getArgs = require('Module:Arguments')["getArgs"]
+
 local function user(username)
   return "{{user|"..username.."}}"
 end
@@ -14,7 +16,7 @@ local function cite_obvious(frame)
   return user(username)..": [[自明な事柄]]である。"
 end
 
-local function main(frame)
+local function _main(frame)
   local subcommand = {
     fact = cite_fact,
     obvious = cite_obvious,
@@ -25,4 +27,13 @@ local function main(frame)
   return subcommand[cite_type](frame)
 end
 
-return {main = main}
+local function main(frame)
+  local args = getArgs(frame)
+
+  return _main(args)
+end
+
+return {
+  main = main,
+  _main = _main,
+}
