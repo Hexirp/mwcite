@@ -1,17 +1,17 @@
 local function user(username)
-  return $"{{user|${user}}}"
+  return "{{user|"..username.."}}"
 end
 
 local function cite_fact(frame)
   local username = frame[1]
 
-  return $"${user(username)}: [[広く知られた事実]]である。"
+  return user(username)..": [[広く知られた事実]]である。"
 end
 
 local function cite_obvious(frame)
   local username = frame[1]
 
-  return $"${user(username)}: [[自明な事柄]]である。"
+  return user(username)..": [[自明な事柄]]である。"
 end
 
 local function main(frame)
