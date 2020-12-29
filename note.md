@@ -37,3 +37,14 @@ ns マジックワードと同じことをやるためには [Lua reference manu
 ## int
 
 int マジックワードと同じことをやるためには [Lua reference manual](https://www.mediawiki.org/wiki/index.php?oldid=4300742#mw.message) にあるように `mw.message` を使う。 `{{int:foo}}` は `mw.message.new("foo"):plain()` に置き換えられる。
+
+## スタイル
+
+ざっと情報を集めた。
+
+* [Citation - Wikipedia](https://en.wikipedia.org/wiki/Citation)
+* [Wikipedia:Citing sources - Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Citing_sources)
+* [Help:Citation Style 1](https://en.wikipedia.org/wiki/Help:Citation_Style_1)
+* [Parenthetical referencing](https://en.wikipedia.org/wiki/Parenthetical_referencing#Author-date)
+
+ウィキペディアでは、様々なスタイルを定めているようである。
